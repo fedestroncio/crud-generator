@@ -1,0 +1,101 @@
+{% if template %}
+{{ "{% extends '"~template~".html.twig' %}" }}
+{% else %}
+{{ "{% extends 'AngelGarridoCrudGeneratorBundle::base.html.twig' %}" }}
+{% endif %}
+{{ "{% form_theme form 'AngelGarridoCrudGeneratorBundle:Form:bootstrap.html.twig' %}" }}
+
+{{ "{% block title %}" }}
+    {{ "{{ parent() }}" }}
+{{ "{% endblock %}" }}
+
+{{ "{% block page %}" }}
+{{ "{% include 'AngelGarridoCrudGeneratorBundle::flash.html.twig' %}" }}
+<div class="row">
+    <h1 class="page-header">{{ "{{ 'entity.list'|trans({'%entity%': '" ~ entity ~ "'}, 'AngelGarridoCrudGeneratorBundle') }}" }}</h1>
+    <table class="table table-condensed table-hover table-bordered">
+        <thead>
+        <tr>
+            <form class="filter-form form-inline" action="{{ "{{ path('" ~ route_name_prefix ~ "') }}" }}" method="get" {{ "{{ form_enctype(form) }}" }}>
+                {% for field in fields -%}
+                <th class="center">{{ "{{ form_row(form." ~ field.fieldName ~ ") }}" }}</th>
+                {% endfor -%}
+                <th class="center">
+                    {{ "{{ 'view.constant.actions'|trans({}, 'AngelGarridoCrudGeneratorBundle') }}" }}
+                    <br/>
+                    <div class="btn-group btn-group-xs">
+                        <button type="submit" name="filter_action"  value="filter"
+                                class="btn btn-primary">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        <button type="submit" name="filter_action" value="reset"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-zoom-out"></span>
+                        </button>
+                    </div>
+                    <br/>
+                    <br/>
+                </th>
+            </form>
+        </tr>
+        </thead>
+        <tbody>
+        {{ "{% for entity in pager %}" }}
+            <tr class="center">
+                {%- for field in fields %}
+                    {% if loop.first and ('show' in actions) -%}
+                        <td><a href="{{ "{{ path('" ~ route_name_prefix ~ "_show', { 'id': entity.id }) }}" }}">{{ "{{ entity." ~ field.fieldName|replace({'_': ''}) ~ " }}" }}</a></td>
+
+                    {% elseif field.type == 'date' -%}
+                        <td>{{ '{% if entity.'~ field.fieldName|replace({'_': ''}) ~' %}{{ entity.'~ field.fieldName|replace({'_': ''}) ~'|date(\'d-m-Y\') }}{% endif %}' }}</td>
+
+                    {% elseif field.type == 'datetime' -%}
+                        <td>{{ '{% if entity.'~ field.fieldName|replace({'_': ''}) ~' %}{{ entity.'~ field.fieldName|replace({'_': ''}) ~'|date(\'d-m-Y H:i:s\') }}{% endif %}' }}</td>
+
+                    {% elseif field.type == 'boolean' -%}
+                        <td>
+                            {{ "{% if(entity."~ field.fieldName|replace({'_': ''}) ~") %}" }}
+                                <span class="text-success">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </span>
+                            {{ "{% else %}" }}
+                                <span class="text-danger">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </span>
+                            {{ "{% endif %}" }}
+                        </td>
+
+                    {% else -%}
+                        <td>{{ "{{ entity." ~ field.fieldName|replace({'_': ''}) ~ " }}" }}</td>
+
+                    {%- endif %}
+                {%- endfor %}
+                <td>
+                    <div class="btn-group btn-group-xs">
+                        <a class="btn btn-success" href="{{ "{{ path('" ~ route_name_prefix ~ "_show', { 'id': entity.id }) }}" }}">
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </a>
+                        <a class="btn btn-warning" href="{{ "{{ path('" ~ route_name_prefix ~ "_edit', { 'id': entity.id }) }}" }}">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        {{ "{% endfor %}" }}
+        </tbody>
+    </table>
+    <div class="row">
+        <div class="col-md-4 marginY">
+            <a  class="btn btn-success" href="{{ "{{ path('" ~ route_name_prefix ~ "_new') }}" }}">
+                <i class="glyphicon glyphicon-plus"></i>
+                {{ "{{ 'entity.new'|trans({'%entity%': '" ~ entity ~ "'}, 'AngelGarridoCrudGeneratorBundle') }}" }}
+            </a>
+        </div>
+        <div class="col-md-4 col-md-offset-4">
+            <div class="pagerfanta pull-right">
+                {{ "{{ pagerfanta(pager, 'twitter_bootstrap3_translated') }}" }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ "{% endblock %}" }}

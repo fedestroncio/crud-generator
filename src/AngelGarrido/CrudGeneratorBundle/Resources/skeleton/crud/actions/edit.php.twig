@@ -1,0 +1,53 @@
+
+    /**
+     * Displays a form to edit an existing {{ entity }} entity.
+     * @ParamConverter("{{ entity_class|lower }}", class="{{ bundle }}:{{ entity }}")
+     *
+{% if 'annotation' == format %}
+     * @Route("/{id}/edit", name="{{ route_name_prefix }}_edit")
+     * @Method("GET")
+     * @Template()
+{% endif %}
+     */
+    public function editAction({{ entity }} ${{ entity_class|lower }})
+    {
+        $editForm = $this->createEditForm(${{ entity_class|lower }});
+
+{% if 'annotation' == format %}
+        return array(
+            'entity'      => ${{ entity_class|lower }},
+            'edit_form'   => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
+        );
+{% else %}
+        return $this->render('{{ bundle }}:{{ entity|replace({'\\': '/'}) }}:edit.html.twig', array(
+            'entity'      => ${{ entity_class|lower }},
+            'edit_form'   => $editForm->createView(),
+        ));
+{% endif %}
+    }
+
+    /**
+    * Creates a form to edit a {{ entity }} entity.
+    *
+    * @param {{ entity }} ${{ entity_class|lower }} The entity
+    *
+    * @return \Symfony\Component\Form\Form The form
+    */
+    private function createEditForm({{ entity }} ${{ entity_class|lower }}, $disabled = false)
+    {
+        if($disabled) {
+            $form = $this->createForm(new {{ entity }}Type(), ${{ entity_class|lower }}, array(
+                'action' => $this->generateUrl('{{ route_name_prefix }}_update', array('id' => ${{ entity_class|lower }}->getId())),
+                'method' => 'PUT',
+                'disabled' => true,
+            ));
+        } else {
+            $form = $this->createForm(new {{ entity }}Type(), ${{ entity_class|lower }}, array(
+                'action' => $this->generateUrl('{{ route_name_prefix }}_update', array('id' => ${{ entity_class|lower }}->getId())),
+                'method' => 'PUT',
+            ));
+        }
+
+        return $form;
+    }

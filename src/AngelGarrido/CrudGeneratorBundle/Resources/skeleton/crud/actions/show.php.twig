@@ -1,0 +1,36 @@
+
+    /**
+     * Finds and displays a {{ entity }} entity.
+     *
+     * @ParamConverter("{{ entity_class|lower }}", class="{{ bundle }}:{{ entity }}")
+{% if 'annotation' == format %}
+     * @Route("/{id}", name="{{ route_name_prefix }}_show")
+     * @Method("GET")
+     * @Template()
+{% endif %}
+     */
+    public function showAction({{ entity }} ${{ entity_class|lower }})
+    {
+        $showForm = $this->createEditForm(${{ entity_class|lower }}, true);
+{% if 'delete' in actions %}
+        $deleteForm = $this->createDeleteForm(${{ entity_class|lower }}->getId());
+{% endif %}
+
+{% if 'annotation' == format %}
+        return array(
+            'entity'      => ${{ entity_class|lower }},
+            'show_form' => $showForm->createView(),
+{% if 'delete' in actions %}
+            'delete_form' => $deleteForm->createView(),
+{% endif %}
+        );
+{% else %}
+        return $this->render('{{ bundle }}:{{ entity|replace({'\\': '/'}) }}:edit.html.twig', array(
+            'entity'      => ${{ entity_class|lower }},
+            'show_form' => $showForm->createView(),
+{% if 'delete' in actions %}
+            'delete_form' => $deleteForm->createView(),
+{% endif %}
+        ));
+{% endif %}
+    }

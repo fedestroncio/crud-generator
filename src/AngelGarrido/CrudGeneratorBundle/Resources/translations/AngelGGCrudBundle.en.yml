@@ -1,0 +1,33 @@
+view:
+    constant:
+        true: Yes
+        false: No
+        actions: Actions
+        back: Back
+        listback: Back to the list
+
+form:
+    save: Save
+    edit: Edit
+    create: Create
+    update: Save changes
+    delete: Delete
+
+entity:
+    trans: %entity%
+    edit: Edit %entity%
+    new: Create %entity%
+    list: List of %entity%s
+    property: %property%
+    back: Back to %entity%
+
+flash:
+    entity:
+        create: The %entity% were successfully created
+        delete: The %entity% were successfully deleted
+        update: The %entity% were successfully updated
+    error:
+        create: The %entity% Could not be created
+        delete: The %entity% Could not be deleted
+        update: The %entity% Could not be updated
+        generic: The action could not be performed

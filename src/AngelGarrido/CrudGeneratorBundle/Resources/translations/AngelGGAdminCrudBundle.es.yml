@@ -1,0 +1,33 @@
+view:
+    constant:
+        true: Sí
+        false: No
+        actions: Acciones
+        back: Volver
+        listback: Volver a la lista
+
+form:
+    save: Guardar
+    edit: Editar
+    create: Crear
+    update: Guardar cambios
+    delete: Borrar
+
+entity:
+    trans: %entity%
+    edit: Editar %entity%
+    new: Crear %entity%
+    list: Lista de %entity%s
+    property: %property%
+    back: Volver a %entity%
+
+flash:
+    entity:
+        create: %entity% se creó correctamente
+        delete: %entity% se borró correctamente
+        update: %entity% se cambió correctamente
+    error:
+        create: %entity% no se pudo crear
+        delete: %entity% no se pudo borrar
+        update: Los cambios en %entity% no pudieron guardarse
+        generic: La operación no pudo realizarse

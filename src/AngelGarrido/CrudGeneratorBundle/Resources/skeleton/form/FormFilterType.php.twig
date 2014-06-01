@@ -1,0 +1,91 @@
+<?php
+
+namespace {{ namespace }}\Form{{ entity_namespace ? '\\' ~ entity_namespace : '' }};
+
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
+use Symfony\Component\Form\FormError;
+use Lexik\Bundle\FormFilterBundle\Filter\FilterOperands;
+
+class {{ form_class }} extends AbstractType
+{
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder
+        {%- for data in fields_data %}
+        {% if data.filterWidget == 'filter_date_range' -%}
+            ->add('{{ data.fieldName }}',
+            'filter_date',
+            array(
+                'widget' => 'single_text',
+                'format' => 'dd-MM-yyyy',
+                'attr' => array(
+                    'class' => 'filter_field',
+                    'placeholder' => 'DD-MM-AAAA',
+            )))
+
+        {% elseif data.filterWidget == 'filter_number_range' -%}
+            ->add('{{ data.fieldName }}',
+            'filter_number_range',
+            array(
+                'attr' => array(
+                    'class' => 'number_range',
+            )))
+
+        {% elseif data.filterWidget == 'filter_text' -%}
+            ->add('{{ data.fieldName }}',
+            'filter_text',
+            array(
+                'condition_pattern' => FilterOperands::STRING_BOTH,
+                'attr' => array(
+                    'class' => 'filter_field',
+            )))
+
+        {% else -%}
+            ->add('{{ data.fieldName }}',
+            '{{ data.filterWidget }}',
+            array(
+                'attr' => array(
+                    'class' => 'filter_field',
+            )))
+
+        {%- endif %}
+        {%- endfor %}
+
+        ;
+
+        $listener = function(FormEvent $event)
+        {
+            // Is data empty?
+            foreach ($event->getData() as $data) {
+                if(is_array($data)) {
+                    foreach ($data as $subData) {
+                        if(!empty($subData)) return;
+                    }
+                }
+                else {
+                    if(!empty($data)) return;
+                }
+            }
+
+            $event->getForm()->addError(new FormError('Filter empty'));
+        };
+        $builder->addEventListener(FormEvents::POST_BIND, $listener);
+    }
+
+    public function getName()
+    {
+        return '{{ form_filter_type_name }}';
+    }
+
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array(
+            'csrf_protection'   => false,
+            'validation_groups' => array('filtering')
+        ));
+    }
+}

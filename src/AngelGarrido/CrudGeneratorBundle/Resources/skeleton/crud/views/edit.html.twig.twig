@@ -1,0 +1,38 @@
+{% if template %}
+{{ "{% extends '"~template~".html.twig' %}" }}
+{% else %}
+{{ "{% extends 'AngelGarridoCrudGeneratorBundle::base.html.twig' %}" }}
+{% endif %}
+{{ "{% if edit_form is defined %}" }}
+    {{ "{% form_theme edit_form 'DoceCodeAdminCrudBundle:Form:bootstrap.html.twig' %}" }}
+{{ "{% elseif show_form is defined %}" }}
+    {{ "{% form_theme show_form 'DoceCodeAdminCrudBundle:Form:bootstrap.html.twig' %}" }}
+{{ "{% endif %}" }}
+
+{{ "{% block title %}" }}
+    {{ "{{ parent() }}" }}
+{{ "{% endblock %}" }}
+
+{{ "{% block page %}" }}
+{{ "{% include 'AngelGarridoCrudGeneratorBundle::flash.html.twig' %}" }}
+<div class="row">
+    <h1 class="page-header">
+        {{ "{{ 'entity.edit'|trans({'%entity%': '" ~ entity ~ "'}, 'AngelGarridoCrudGeneratorBundle') }}" }}
+        <div class="pull-right">
+            <a id="btn btnreturn" class="btn btn-primary" href="{{ "{{ path('" ~ route_name_prefix ~ "') }}" }}">
+                <span class="glyphicon glyphicon-arrow-left"></span>
+                {{ "{{ 'view.constant.listback'|trans({}, 'AngelGarridoCrudGeneratorBundle') }}" }}
+            </a>
+        </div>
+    </h1>
+    {{ "{% if edit_form is defined %}" }}
+        {{ "{{ form(edit_form) }}" }}
+    {{ "{% elseif show_form is defined %}" }}
+        {{ "{{ form_start(show_form) }}" }}
+        {{ "{{ form_row(show_form.submit, { 'hidden': true }) }}" }}
+        {{ "{{ form_end(show_form) }}" }}
+    {{ "{% endif %}" }}
+    <br/>
+    {{ "{% if delete_form is defined %}{{ form(delete_form) }}{% endif %}" }}
+</div>
+{{ "{% endblock %}" }}
