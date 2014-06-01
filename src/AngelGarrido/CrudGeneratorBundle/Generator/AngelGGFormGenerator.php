@@ -2,13 +2,36 @@
 
 namespace AngelGarrido\CrudGeneratorBundle\Generator;
 
-use Sensio\Bundle\GeneratorBundle\Generator\DoctrineFormGenerator;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpKernel\Bundle\BundleInterface;
 use Doctrine\ORM\Mapping\ClassMetadataInfo;
 
-class AngelGGFormGenerator extends DoctrineFormGenerator
+class AngelGGFormGenerator
 {
+    private $filesystem;
+    private $className;
+    private $classPath;
+
+    /**
+     * Constructor.
+     *
+     * @param Filesystem $filesystem A Filesystem instance
+     */
+    public function __construct(Filesystem $filesystem)
+    {
+        $this->filesystem = $filesystem;
+    }
+
+    public function getClassName()
+    {
+        return $this->className;
+    }
+
+    public function getClassPath()
+    {
+        return $this->classPath;
+    }
+
     public function generate(BundleInterface $bundle, $entity, ClassMetadataInfo $metadata)
     {
         $parts       = explode('\\', $entity);
