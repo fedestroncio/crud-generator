@@ -10,7 +10,8 @@
      */
     public function indexAction(Request $request)
     {
-        list($filterForm, $queryBuilder) = $this->filter($request);
+        $em = $this->getDoctrine()->getManager();
+        $queryBuilder = $em->getRepository('{{ bundle }}:{{ entity }}')->createQueryBuilder('e');
 
         list($pager, $entities) = $this->paginator($queryBuilder, $request);
 
@@ -18,54 +19,13 @@
         return array(
             'entities' => $entities,
             'pager' => $pager,
-            'form' => $filterForm->createView(),
         );
 {% else %}
         return $this->render('{{ bundle }}:{{ entity|replace({'\\': '/'}) }}:index.html.twig', array(
             'entities' => $entities,
             'pager' => $pager,
-            'form' => $filterForm->createView(),
         ));
 {% endif %}
-    }
-
-    /**
-    * Create filter form and process filter request.
-    *
-    */
-    protected function filter(Request $request)
-    {
-        $session = $request->getSession();
-        $filterForm = $this->createForm(new {{ entity }}FilterType());
-        $em = $this->getDoctrine()->getManager();
-        $queryBuilder = $em->getRepository('{{ bundle }}:{{ entity }}')->createQueryBuilder('e');
-
-        // Reset filter
-        if ($request->get('filter_action') == 'reset') {
-            $session->remove('{{ entity }}ControllerFilter');
-        }
-
-        // Filter action
-        if ($request->get('filter_action') == 'filter') {
-            $filterForm->submit($request);
-
-            if ($filterForm->isValid()) {
-                // Build the query from the given form object
-                $this->get('lexik_form_filter.query_builder_updater')->addFilterConditions($filterForm, $queryBuilder);
-                // Save filter to session
-                $filterData = $filterForm->getData();
-                $session->set('{{ entity }}ControllerFilter', $filterData);
-            }
-        } else {
-            // Get filter from session
-            if ($session->has('{{ entity }}ControllerFilter')) {
-                $filterData = $session->get('{{ entity }}ControllerFilter');
-                $filterForm = $this->createForm(new {{ entity }}FilterType(), $filterData);
-                $this->get('lexik_form_filter.query_builder_updater')->addFilterConditions($filterForm, $queryBuilder);
-            }
-        }
-
-        return array($filterForm, $queryBuilder);
     }
 
     /**
@@ -78,6 +38,7 @@
         $adapter = new DoctrineORMAdapter($queryBuilder);
         $pagerfanta = new Pagerfanta($adapter);
         $currentPage = $request->get('page', 1);
+        $pagerfanta->setMaxPerPage(15);
         $pagerfanta->setCurrentPage($currentPage);
         $entities = $pagerfanta->getCurrentPageResults();
 
