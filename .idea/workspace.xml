@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bb0569e-f06d-4801-ab8f-3e721d84dbb9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Controller/GenericController.php" afterPath="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Controller/GenericController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/update.php.twig" afterPath="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/update.php.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/form/FormType.php.twig" afterPath="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/form/FormType.php.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/public/css/crudStyles.css" afterPath="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/public/css/crudStyles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/views/edit.html.twig.twig" afterPath="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/views/edit.html.twig.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/views/index.html.twig.twig" afterPath="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/views/index.html.twig.twig" />
     </list>
     <ignored path="crudgen.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,16 +42,16 @@
       <file leaf-file-name="index.php.twig" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/index.php.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="39" selection-start="48" selection-end="48" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="986">
+            <state line="2" column="39" selection-start="48" selection-end="48" vertical-scroll-proportion="7.8461537" vertical-offset="238" max-vertical-offset="986">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="update.php.twig" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/update.php.twig">
+      <file leaf-file-name="base.html.twig" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="31" selection-start="751" selection-end="751" vertical-scroll-proportion="0.26975945" vertical-offset="183" max-vertical-offset="765">
+            <state line="15" column="0" selection-start="485" selection-end="485" vertical-scroll-proportion="0.42857143" vertical-offset="0" max-vertical-offset="595">
               <folding />
             </state>
           </provider>
@@ -73,13 +75,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Command/AngelGGCrudCommand.php" />
         <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/config/services.yml" />
         <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/composer.json" />
         <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Generator/AngelGGCrudGenerator.php" />
-        <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/public/css/crudStyles.css" />
-        <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/views/index.html.twig.twig" />
-        <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/views/edit.html.twig.twig" />
         <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/delete.php.twig" />
         <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/controller.php.twig" />
         <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/create.php.twig" />
@@ -89,6 +87,10 @@
         <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/show.php.twig" />
         <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Controller/GenericController.php" />
         <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/update.php.twig" />
+        <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/views/edit.html.twig.twig" />
+        <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/views/index.html.twig.twig" />
+        <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/form/FormType.php.twig" />
+        <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/public/css/crudStyles.css" />
       </list>
     </option>
   </component>
@@ -446,6 +448,10 @@
               <option name="myItemId" value="Resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -470,10 +476,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="translations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -504,10 +506,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="skeleton" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="form" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -580,138 +578,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crudgen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crudgen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AngelGarrido" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CrudGeneratorBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="skeleton" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crud" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="actions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crudgen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crudgen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AngelGarrido" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CrudGeneratorBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crudgen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crudgen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AngelGarrido" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CrudGeneratorBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crudgen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crudgen" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AngelGarrido" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CrudGeneratorBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -906,62 +772,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Generator/AngelGGCrudGenerator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="1627" selection-end="1627" vertical-scroll-proportion="0.7371134" vertical-offset="251" max-vertical-offset="833">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/sensio/generator-bundle/Sensio/Bundle/GeneratorBundle/Generator/DoctrineCrudGenerator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="5" selection-start="3656" selection-end="4473" vertical-scroll-proportion="0.029209621" vertical-offset="1836" max-vertical-offset="4828">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/translations/AngelGGCrudBundle.es.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/public/css/crudStyles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="1" selection-start="70" selection-end="70" vertical-scroll-proportion="0.136876" vertical-offset="0" max-vertical-offset="621">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/sensio/generator-bundle/Sensio/Bundle/GeneratorBundle/Resources/skeleton/crud/views/index.html.twig.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="32" selection-start="192" selection-end="419" vertical-scroll-proportion="0.058419243" vertical-offset="102" max-vertical-offset="1190">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/views/edit.html.twig.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="19" selection-start="351" selection-end="351" vertical-scroll-proportion="0.14285715" vertical-offset="0" max-vertical-offset="680">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/views/index.html.twig.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="26" selection-start="496" selection-end="496" vertical-scroll-proportion="-1.2199312" vertical-offset="914" max-vertical-offset="1496">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/controller.php.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="12" selection-start="227" selection-end="227" vertical-scroll-proportion="0.17142858" vertical-offset="0" max-vertical-offset="1054">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/edit.php.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="43" column="50" selection-start="1583" selection-end="1583" vertical-scroll-proportion="-16.346153" vertical-offset="306" max-vertical-offset="901">
@@ -990,9 +800,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/index.php.twig">
+    <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/delete.php.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="39" selection-start="48" selection-end="48" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="986">
+        <state line="20" column="16" selection-start="733" selection-end="796" vertical-scroll-proportion="0.5714286" vertical-offset="0" max-vertical-offset="850">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/config/routing.yml.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="765">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/update.php.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="31" selection-start="751" selection-end="751" vertical-scroll-proportion="0.26975945" vertical-offset="183" max-vertical-offset="765">
           <folding />
         </state>
       </provider>
@@ -1006,16 +830,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/delete.php.twig">
+    <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/translations/AngelGGCrudBundle.en.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="16" selection-start="733" selection-end="796" vertical-scroll-proportion="0.5714286" vertical-offset="0" max-vertical-offset="850">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.07666667" vertical-offset="46" max-vertical-offset="646">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/update.php.twig">
+    <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/views/index.html.twig.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="31" selection-start="751" selection-end="751" vertical-scroll-proportion="0.26975945" vertical-offset="183" max-vertical-offset="765">
+        <state line="57" column="29" selection-start="2480" selection-end="2480" vertical-scroll-proportion="-0.05154639" vertical-offset="999" max-vertical-offset="1581">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/index.php.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="39" selection-start="48" selection-end="48" vertical-scroll-proportion="7.8461537" vertical-offset="238" max-vertical-offset="986">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/controller.php.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="12" selection-start="227" selection-end="227" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="1054">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/public/css/crudStyles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="1" selection-start="103" selection-end="103" vertical-scroll-proportion="0.22666667" vertical-offset="0" max-vertical-offset="600">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/form/FormType.php.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="135" selection-start="1726" selection-end="1726" vertical-scroll-proportion="-11.115385" vertical-offset="561" max-vertical-offset="1207">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/views/edit.html.twig.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="936" selection-end="936" vertical-scroll-proportion="0.6060606" vertical-offset="0" max-vertical-offset="748">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="485" selection-end="485" vertical-scroll-proportion="0.42857143" vertical-offset="0" max-vertical-offset="595">
           <folding />
         </state>
       </provider>

@@ -11,29 +11,33 @@
     <table class="table table-condensed table-hover">
         <thead>
         <tr class="center">
-            {%- for field, metadata in fields %}
+            {%- for field in fields %}
 
                 <th>{{ field|capitalize }}</th>
 
             {%- endfor %}
 
-            <th>{{ "{{ 'view.constant.actions'|trans(null, 'AngelGarridoCrudGeneratorBundle') }}" }}</th>
+            <th>{{ "{{ 'view.constant.actions'|trans({}, 'AngelGarridoCrudGeneratorBundle') }}" }}</th>
         </tr>
         </thead>
         <tbody>
         {{ "{% for entity in pager %}" }}
             <tr class="center">
                 {%- for field in fields %}
-                    {% if loop.first and ('show' in actions) -%}
+                    {%- if loop.first and ('show' in actions) %}
+
                         <td><a href="{{ "{{ path('" ~ route_name_prefix ~ "_show', { 'id': entity.id }) }}" }}">{{ "{{ entity." ~ field.fieldName|replace({'_': ''}) ~ " }}" }}</a></td>
 
-                    {% elseif field.type == 'date' -%}
+                    {%- elseif field.type == 'date' %}
+
                         <td>{{ '{% if entity.'~ field.fieldName|replace({'_': ''}) ~' %}{{ entity.'~ field.fieldName|replace({'_': ''}) ~'|date(\'d-m-Y\') }}{% endif %}' }}</td>
 
-                    {% elseif field.type == 'datetime' -%}
+                    {%- elseif field.type == 'datetime' %}
+
                         <td>{{ '{% if entity.'~ field.fieldName|replace({'_': ''}) ~' %}{{ entity.'~ field.fieldName|replace({'_': ''}) ~'|date(\'d-m-Y H:i:s\') }}{% endif %}' }}</td>
 
-                    {% elseif field.type == 'boolean' -%}
+                    {%- elseif field.type == 'boolean' %}
+
                         <td>
                             {{ "{% if(entity."~ field.fieldName|replace({'_': ''}) ~") %}" }}
                                 <span class="text-success">
@@ -46,7 +50,8 @@
                             {{ "{% endif %}" }}
                         </td>
 
-                    {% else -%}
+                    {%- else %}
+
                         <td>{{ "{{ entity." ~ field.fieldName|replace({'_': ''}) ~ " }}" }}</td>
 
                     {%- endif %}

@@ -13,35 +13,42 @@ class {{ form_class }} extends AbstractType
         $builder
         {%- for field in fields %}
         {%- if field.id is defined and field.id == true %}
-        {% elseif field.type == 'date' -%}
+        {%- elseif field.type == 'date' %}
+
             ->add('{{ field.fieldName }}', 'date', array(
                 'widget' => 'single_text',
                 'format' => 'dd-MM-yyyy',
                 'attr' => array('placeholder' => 'DD-MM-AAAA'
             )))
 
-        {% elseif field.type == 'datetime' -%}
+        {%- elseif field.type == 'datetime' %}
+
             ->add('{{ field.fieldName }}', 'datetime', array(
                 'widget' => 'single_text',
                 'format' => 'dd-MM-yyyy H:i:s',
                 'attr' => array('placeholder' => 'DD-MM-AAAA HH:MM:SS'
             )))
 
-        {% elseif field.type == 'boolean' -%}
+        {%- elseif field.type == 'boolean' %}
+
             ->add('{{ field.fieldName }}', 'checkbox', array('required' => false))
 
-        {% elseif field.type == 'text' -%}
+        {%- elseif field.type == 'text' %}
+
             ->add('{{ field.fieldName }}', 'textarea', array())
 
-        {% elseif field.type == 'string' -%}
+        {%- elseif field.type == 'string' %}
+
             ->add('{{ field.fieldName }}', 'text', array({% if field.length is defined %}'max_length' => {{ field.length }}{% endif %}))
 
-        {% else -%}
+        {%- else %}
+
             ->add('{{ field.fieldName }}', null, array())
 
         {%- endif %}
-        {% endfor -%}
-            ->add('submit', 'submit', array('label' => ' ', 'attr' => array('class' => 'btn btn-success glyphicon glyphicon-send', 'style' => 'font-size: 20px;')));
+        {%- endfor %}
+
+            ->add('submit', 'submit', array('label' => ' ', 'attr' => array('class' => 'btn btn-success glyphicon glyphicon-send font20')));
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
