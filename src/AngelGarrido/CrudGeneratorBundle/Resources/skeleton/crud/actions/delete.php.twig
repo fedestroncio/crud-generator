@@ -16,9 +16,10 @@
             $em = $this->getDoctrine()->getManager();
             $em->remove(${{ entity_class|lower }});
             $em->flush();
-            $request->getSession()->getFlashBag()->add('success', $this->get('translator')->trans('flash.entity.delete', array('%entity%' => '{{ entity }}'), 'AngelGarridoCrudGeneratorBundle'));
+
+            $this->flashSuccessDelete($request, '{{ entity }}');
         } else {
-            $request->getSession()->getFlashBag()->add('danger', $this->get('translator')->trans('flash.error.delete', array('%entity%' => '{{ entity }}'), 'AngelGarridoCrudGeneratorBundle'));
+            $this->flashErrorDelete($request, '{{ entity }}');
         }
 
         return $this->redirect($this->generateUrl('{{ route_name_prefix }}'));
@@ -37,7 +38,7 @@
             ->setAction($this->generateUrl('{{ route_name_prefix }}_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array(
-            'label' => $this->get('translator')->trans('form.delete', array(), 'AngelGarridoCrudGeneratorBundle'),
+            'label' => $this->translate('form.delete', array()),
             'attr' => array('class' => 'btn btn-danger'
             )))
             ->getForm();

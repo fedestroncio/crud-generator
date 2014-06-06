@@ -18,15 +18,15 @@
             $em = $this->getDoctrine()->getManager();
             $em->persist(${{ entity_class|lower }});
             $em->flush();
-            $request->getSession()->getFlashBag()->add('success', $this->get('translator')->trans('flash.entity.create', array('%entity%' => '{{ entity }}'), 'AngelGarridoCrudGeneratorBundle'));
+            $this->flashSuccessCreate($request, '{{ entity }}');
 
-            {% if 'show' in actions -%}
+{% if 'show' in actions %}
                 return $this->redirect($this->generateUrl('{{ route_name_prefix }}_show', array('id' => ${{ entity_class|lower }}->getId())));
-            {%- else -%}
+{% else %}
                 return $this->redirect($this->generateUrl('{{ route_name_prefix }}'));
-            {%- endif %}
+{% endif %}
         } else {
-            $request->getSession()->getFlashBag()->add('danger', $this->get('translator')->trans('flash.error.create', array('%entity%' => '{{ entity }}'), 'AngelGarridoCrudGeneratorBundle'));
+            $this->flashErrorCreate($request, '{{ entity }}');
         }
 
 {% if 'annotation' == format %}
