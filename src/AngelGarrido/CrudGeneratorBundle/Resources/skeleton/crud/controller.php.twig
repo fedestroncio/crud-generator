@@ -6,7 +6,7 @@ namespace {{ namespace }}\Controller{{ entity_namespace ? '\\' ~ entity_namespac
 use Symfony\Component\HttpFoundation\Request;
 {%- endif %}
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use AngelGarrido\CrudGeneratorBundle\Controller\GenericController;
 {% if 'annotation' == format -%}
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -22,7 +22,6 @@ use {{ namespace }}\Entity\{{ entity }};
 {% if 'new' in actions or 'edit' in actions %}
 use {{ namespace }}\Form\{{ entity }}Type;
 {% endif %}
-use {{ namespace }}\Form\{{ entity }}FilterType;
 
 /**
  * {{ entity }} controller.
@@ -31,7 +30,7 @@ use {{ namespace }}\Form\{{ entity }}FilterType;
  * @Route("/{{ route_prefix }}")
 {% endif %}
  */
-class {{ entity_class }}Controller extends Controller
+class {{ entity_class }}Controller extends GenericController
 {
 
     {%- if 'index' in actions %}
