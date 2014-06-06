@@ -1,8 +1,4 @@
-{% if template %}
-{{ "{% extends '"~template~".html.twig' %}" }}
-{% else %}
 {{ "{% extends 'AngelGarridoCrudGeneratorBundle::base.html.twig' %}" }}
-{% endif %}
 {{ "{% if edit_form is defined %}" }}
     {{ "{% form_theme edit_form 'DoceCodeAdminCrudBundle:Form:bootstrap.html.twig' %}" }}
 {{ "{% elseif show_form is defined %}" }}

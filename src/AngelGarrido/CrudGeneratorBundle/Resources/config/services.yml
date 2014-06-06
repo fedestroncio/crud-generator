@@ -2,9 +2,6 @@ parameters:
     angel_garrido.twig.bootstrap_form_extension.class: AngelGarrido\CrudGeneratorBundle\Twig\BootstrapFormExtension
 
 services:
-#    angel_garrido_crud_generator.example:
-#        class: %angel_garrido_crud_generator.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
     angel_garrido.twig.bootstrap_form_extension:
         class: %docecode.twig.bootstrap_form_extension.class%
         tags:

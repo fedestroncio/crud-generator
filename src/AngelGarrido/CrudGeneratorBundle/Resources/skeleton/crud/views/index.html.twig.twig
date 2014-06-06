@@ -1,9 +1,4 @@
-{% if template %}
-{{ "{% extends '"~template~".html.twig' %}" }}
-{% else %}
 {{ "{% extends 'AngelGarridoCrudGeneratorBundle::base.html.twig' %}" }}
-{% endif %}
-{{ "{% form_theme form 'AngelGarridoCrudGeneratorBundle:Form:bootstrap.html.twig' %}" }}
 
 {{ "{% block title %}" }}
     {{ "{{ parent() }}" }}
@@ -13,30 +8,16 @@
 {{ "{% include 'AngelGarridoCrudGeneratorBundle::flash.html.twig' %}" }}
 <div class="row">
     <h1 class="page-header">{{ "{{ 'entity.list'|trans({'%entity%': '" ~ entity ~ "'}, 'AngelGarridoCrudGeneratorBundle') }}" }}</h1>
-    <table class="table table-condensed table-hover table-bordered">
+    <table class="table table-condensed table-hover">
         <thead>
-        <tr>
-            <form class="filter-form form-inline" action="{{ "{{ path('" ~ route_name_prefix ~ "') }}" }}" method="get" {{ "{{ form_enctype(form) }}" }}>
-                {% for field in fields -%}
-                <th class="center">{{ "{{ form_row(form." ~ field.fieldName ~ ") }}" }}</th>
-                {% endfor -%}
-                <th class="center">
-                    {{ "{{ 'view.constant.actions'|trans({}, 'AngelGarridoCrudGeneratorBundle') }}" }}
-                    <br/>
-                    <div class="btn-group btn-group-xs">
-                        <button type="submit" name="filter_action"  value="filter"
-                                class="btn btn-primary">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                        <button type="submit" name="filter_action" value="reset"
-                                class="btn btn-danger">
-                            <span class="glyphicon glyphicon-zoom-out"></span>
-                        </button>
-                    </div>
-                    <br/>
-                    <br/>
-                </th>
-            </form>
+        <tr class="center">
+            {%- for field, metadata in fields %}
+
+                <th>{{ field|capitalize }}</th>
+
+            {%- endfor %}
+
+            <th>{{ "{{ 'view.constant.actions'|trans(null, 'AngelGarridoCrudGeneratorBundle') }}" }}</th>
         </tr>
         </thead>
         <tbody>
@@ -85,7 +66,7 @@
         </tbody>
     </table>
     <div class="row">
-        <div class="col-md-4 marginY">
+        <div class="col-md-4 margin20T">
             <a  class="btn btn-success" href="{{ "{{ path('" ~ route_name_prefix ~ "_new') }}" }}">
                 <i class="glyphicon glyphicon-plus"></i>
                 {{ "{{ 'entity.new'|trans({'%entity%': '" ~ entity ~ "'}, 'AngelGarridoCrudGeneratorBundle') }}" }}
