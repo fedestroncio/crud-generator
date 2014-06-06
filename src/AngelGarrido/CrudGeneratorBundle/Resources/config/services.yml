@@ -3,6 +3,6 @@ parameters:
 
 services:
     angel_garrido.twig.bootstrap_form_extension:
-        class: %docecode.twig.bootstrap_form_extension.class%
+        class: %angel_garrido.twig.bootstrap_form_extension.class%
         tags:
             - { name: twig.extension }
