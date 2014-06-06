@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bb0569e-f06d-4801-ab8f-3e721d84dbb9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/index.php.twig" afterPath="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/index.php.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/new.php.twig" afterPath="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/new.php.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/show.php.twig" afterPath="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/show.php.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Controller/GenericController.php" afterPath="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Controller/GenericController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/update.php.twig" afterPath="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/update.php.twig" />
     </list>
     <ignored path="crudgen.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,7 +29,7 @@
       <file leaf-file-name="GenericController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Controller/GenericController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="53" selection-start="806" selection-end="806" vertical-scroll-proportion="-17.0" vertical-offset="0" max-vertical-offset="748">
+            <state line="34" column="39" selection-start="1029" selection-end="1029" vertical-scroll-proportion="-13.730769" vertical-offset="221" max-vertical-offset="918">
               <folding>
                 <element signature="e#63#120#0" expanded="true" />
               </folding>
@@ -38,10 +37,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php.twig" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.php.twig" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/index.php.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="39" selection-start="48" selection-end="48" vertical-scroll-proportion="0.057142857" vertical-offset="0" max-vertical-offset="986">
+            <state line="2" column="39" selection-start="48" selection-end="48" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="986">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update.php.twig" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/update.php.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="31" selection-start="751" selection-end="751" vertical-scroll-proportion="0.26975945" vertical-offset="183" max-vertical-offset="765">
               <folding />
             </state>
           </provider>
@@ -65,12 +73,10 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Generator/AngelGGFormGenerator.php" />
         <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Command/AngelGGCrudCommand.php" />
         <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/config/services.yml" />
         <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/composer.json" />
         <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Generator/AngelGGCrudGenerator.php" />
-        <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Controller/GenericController.php" />
         <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/public/css/crudStyles.css" />
         <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/views/index.html.twig.twig" />
         <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/views/edit.html.twig.twig" />
@@ -81,6 +87,8 @@
         <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/index.php.twig" />
         <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/new.php.twig" />
         <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/show.php.twig" />
+        <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Controller/GenericController.php" />
+        <option value="$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/update.php.twig" />
       </list>
     </option>
   </component>
@@ -898,13 +906,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="56" selection-start="446" selection-end="446" vertical-scroll-proportion="0.38501742" vertical-offset="0" max-vertical-offset="574">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Generator/AngelGGCrudGenerator.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="0" selection-start="1627" selection-end="1627" vertical-scroll-proportion="0.7371134" vertical-offset="251" max-vertical-offset="833">
@@ -961,22 +962,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Controller/GenericController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="53" selection-start="806" selection-end="806" vertical-scroll-proportion="-17.0" vertical-offset="0" max-vertical-offset="748">
-          <folding>
-            <element signature="e#63#120#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/delete.php.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="64" selection-start="1407" selection-end="1407" vertical-scroll-proportion="1.1428572" vertical-offset="0" max-vertical-offset="850">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/edit.php.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="43" column="50" selection-start="1583" selection-end="1583" vertical-scroll-proportion="-16.346153" vertical-offset="306" max-vertical-offset="901">
@@ -1007,7 +992,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/index.php.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="39" selection-start="48" selection-end="48" vertical-scroll-proportion="0.057142857" vertical-offset="0" max-vertical-offset="986">
+        <state line="2" column="39" selection-start="48" selection-end="48" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="986">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Controller/GenericController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="39" selection-start="1029" selection-end="1029" vertical-scroll-proportion="-13.730769" vertical-offset="221" max-vertical-offset="918">
+          <folding>
+            <element signature="e#63#120#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/delete.php.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="16" selection-start="733" selection-end="796" vertical-scroll-proportion="0.5714286" vertical-offset="0" max-vertical-offset="850">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AngelGarrido/CrudGeneratorBundle/Resources/skeleton/crud/actions/update.php.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="31" selection-start="751" selection-end="751" vertical-scroll-proportion="0.26975945" vertical-offset="183" max-vertical-offset="765">
           <folding />
         </state>
       </provider>

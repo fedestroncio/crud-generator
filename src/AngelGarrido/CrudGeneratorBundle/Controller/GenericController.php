@@ -27,6 +27,16 @@ class GenericController extends Controller
         $this->flash($request, 'danger', 'flash.error.delete', $entity);
     }
 
+    protected function flashSuccessUpdate(Request $request, $entity)
+    {
+        $this->flash($request, 'success', 'flash.entity.update', $entity);
+    }
+
+    protected function flashErrorUpdate(Request $request, $entity)
+    {
+        $this->flash($request, 'danger', 'flash.error.update', $entity);
+    }
+
     protected function flash(Request $request, $type, $action, $entity)
     {
         $request->getSession()->getFlashBag()->add($type, $this->translate($action, array('%entity%' => $entity)));
