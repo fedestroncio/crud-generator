@@ -15,9 +15,11 @@
     <h1 class="page-header">
         {{ "{{ 'entity.trans'|trans({'%entity%': '" ~ entity ~ "'}, 'AngelGarridoCrudGeneratorBundle') }}" }}
         <div class="pull-right">
-            <a class="btn btn-warning" id="edit-this" href="{{ "{{ path('" ~ route_name_prefix ~ "_edit', { 'id': entity.id }) }}" }}">
-                <span class="glyphicon glyphicon-pencil"></span>
-            </a>
+            {{ "{% if show_form is defined %}" }}
+                <a class="btn btn-warning" id="edit-this" href="{{ "{{ path('" ~ route_name_prefix ~ "_edit', { 'id': entity.id }) }}" }}">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </a>
+            {{ "{% endif %}" }}
 
             <a id="btn-return" class="btn btn-primary" href="{{ "{{ path('" ~ route_name_prefix ~ "') }}" }}">
                 <span class="glyphicon glyphicon-arrow-left"></span>
