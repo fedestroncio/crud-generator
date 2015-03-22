@@ -1,4 +1,0 @@
-angel_garrido_crud_generator:
-    resource: "@AngelGarridoCrudGeneratorBundle/Resources/config/routing.yml"
-    prefix:   /
-
