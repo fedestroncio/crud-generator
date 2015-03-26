@@ -9,10 +9,10 @@
         }
     ],
     "require": {
-        "symfony/symfony": ">2.2.0, <=2.*",
-        "sensio/generator-bundle": ">2.2.0, <2.*",
+        "symfony/symfony": ">2.2.0, <3.0-dev",
+        "sensio/generator-bundle": ">2.2.0, <2.9-dev",
         "white-october/pagerfanta-bundle": "dev-master",
-        "doctrine/orm": ">=2.2.3,<2.*"
+        "doctrine/orm": ">=2.2.3,<2.9-dev"
     },
     "minimum-stability": "dev",
     "autoload": {
